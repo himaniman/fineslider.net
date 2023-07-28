@@ -6,7 +6,7 @@
         xmlns:fs="clr-namespace:FineSliderNet;assembly=FineSliderNet"
         xmlns:local="clr-namespace:Example"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="600">
+        Title="Example" Height="200" Width="600">
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Value Double" Margin="4" HorizontalAlignment="Center"/>
         <TextBox Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}" Margin="4"/>
