@@ -13,9 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static FineSlider.Net.Utility;
+using static FineSliderNet.Utility;
 
-namespace FineSlider.Net
+namespace FineSliderNet
 {
     public partial class FineSlider : UserControl, INotifyPropertyChanged
     {
@@ -94,7 +94,6 @@ namespace FineSlider.Net
         private static void SpanPropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             FineSlider input = (FineSlider)d;
-            //input.RedrawSpanValue();
             input.RedrawLimb();
         }
 
@@ -129,7 +128,6 @@ namespace FineSlider.Net
         {
             FineSlider input = (FineSlider)d;
             input.PropertyChanged?.Invoke(input, new PropertyChangedEventArgs(nameof(ValueString)));
-            //input.RedrawSpanValue();
             input.RedrawLimb();
         }
 
@@ -154,7 +152,7 @@ namespace FineSlider.Net
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ValueString)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
             RedrawLimb();
         }
 

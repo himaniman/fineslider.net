@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FineSlider.Net\FineSlider.Net.csproj" />
+    <ProjectReference Include="..\FineSliderNet\FineSliderNet.csproj" />
   </ItemGroup>
 
 </Project>
