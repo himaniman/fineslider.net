@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="FineSlider.Net.FineSlider"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FineSlider.Net"
+             mc:Ignorable="d" 
+             d:DesignWidth="250" Background="#00FFFFFF">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="MainFillGray" Color="#FFF0F0F0"/>
+        <SolidColorBrush x:Key="MainFillActive" Color="#FFDAECFC"/>
+        <SolidColorBrush x:Key="MainStrokeGray" Color="#FFACACAC"/>
+        <SolidColorBrush x:Key="UnactivityFillGray" Color="#FFE7EAEA"/>
+        <SolidColorBrush x:Key="UnactivityFillActive" Color="#FFDAECFC"/>
+        <SolidColorBrush x:Key="UnactivityStrokeGray" Color="#FFD6D6D6"/>
+        <VisualBrush x:Key="HatchBrush" PresentationOptions:Freeze="True" TileMode="Tile" Viewport="0,0,10,10" Viewbox="0,0,10,10" ViewportUnits="Absolute" ViewboxUnits="Absolute">
+            <VisualBrush.Visual>
+                <Grid>
+                    <Path Data="M 0 10 L 10 0" Stroke="{StaticResource MainStrokeGray}"/>
+                    <Path Data="M 0 20 L 20 0" Stroke="{StaticResource MainStrokeGray}"/>
+                    <Path Data="M -10 10 L 10 -10" Stroke="{StaticResource MainStrokeGray}"/>
+                </Grid>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </UserControl.Resources>
+    <Grid>
+        <Canvas x:Name="CanvasTicks"/>
+        <Grid x:Name="TicksLabel"/>
+
+        <Border Height="4" BorderBrush="{StaticResource UnactivityStrokeGray}" BorderThickness="1" VerticalAlignment="Top">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="{StaticResource UnactivityFillGray}"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:FineSlider}}, Path=IsActive, Mode=OneWay}" Value="true">
+                            <Setter Property="Background" Value="{StaticResource UnactivityFillActive}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+        </Border>
+        <Path Stroke="{StaticResource MainStrokeGray}" Stretch="Uniform" Height="6" Margin="5" Data="M 0,5 5,0 10,5 Z" VerticalAlignment="Top">
+            <Path.Style>
+                <Style TargetType="Path">
+                    <Setter Property="Fill" Value="{StaticResource MainFillGray}"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:FineSlider}}, Path=IsActive, Mode=OneWay}" Value="true">
+                            <Setter Property="Fill" Value="{StaticResource MainFillActive}"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Path.Style>
+        </Path>
+
+        <TextBlock x:Name="LabelValue" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:FineSlider}}, Path=ValueString, Mode=OneWay}" 
+                   Margin="0,10,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+        <Border x:Name="RightWall" Width="50" Height="12" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{StaticResource HatchBrush}" BorderBrush="{StaticResource MainStrokeGray}" BorderThickness="2,0,0,0"/>
+        <Canvas ClipToBounds="True">
+            <Border x:Name="LeftWall" Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:FineSlider}}, Path=ActualWidth}" Height="12" HorizontalAlignment="Left" VerticalAlignment="Top" Background="{StaticResource HatchBrush}" BorderBrush="{StaticResource MainStrokeGray}" BorderThickness="0,0,2,0"/>
+        </Canvas>
+    </Grid>
+</UserControl>

@@ -3,10 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fs="clr-namespace:FineSlider.Net;assembly=FineSlider.Net"
         xmlns:local="clr-namespace:Example"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="200" Width="600">
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="Value Double" Margin="4" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}" Margin="4"/>
+        <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
+                       Unit="V" Span="0.1" MinimumSpan="0.01" MaximumSpan="40" 
+                       Height="40" Margin="4"/>
+    </StackPanel>
 </Window>
