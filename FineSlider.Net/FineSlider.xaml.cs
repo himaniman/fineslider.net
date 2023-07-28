@@ -292,7 +292,8 @@ namespace FineSlider.Net
             double ticksStep = span / ticksQty;
             double ticksSubStep = ticksStep / 100;
 
-            double nearSubTick = Math.Round(newval / ticksSubStep) * ticksSubStep;
+            int major = -(int)Math.Floor(Math.Log10(ticksSubStep));
+            double nearSubTick = Math.Round(Math.Round(newval / ticksSubStep) * ticksSubStep, major >= 0 || major <= 15 ? major : 15);
             newval = nearSubTick;
 
             if (!double.IsNaN(Maximum) && newval > Maximum) Value = Maximum;
