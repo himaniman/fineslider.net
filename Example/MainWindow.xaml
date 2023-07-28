@@ -10,8 +10,9 @@
     <StackPanel Orientation="Vertical">
         <TextBlock Text="Value Double" Margin="4" HorizontalAlignment="Center"/>
         <TextBox Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}" Margin="4"/>
+        <ProgressBar Value="{Binding ValueDouble}" Minimum="-60" Maximum="60" Height="18" Margin="4"/>
         <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
-                       Unit="V" Span="0.1" MinimumSpan="0.01" MaximumSpan="40" 
+                       Unit="V" Span="0.1" MinimumSpan="0.01" MaximumSpan="100" 
                        Height="40" Margin="4"/>
     </StackPanel>
 </Window>
