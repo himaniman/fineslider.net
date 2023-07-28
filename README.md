@@ -6,9 +6,7 @@
 [![MIT License][license-shield]][license-url]
 
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="Images/icon.ico" alt="Logo" width="80" height="80"/>
-  </a>
 </div>
 
 ## About Fine Slider
@@ -28,7 +26,7 @@ This is an easy quick project to manage physical numbers. It is under developmen
 
 ### Installation
 
-Just use nuget...
+Just use nuget
 
 ## Usage
 
@@ -40,12 +38,12 @@ Normally, you should bind the `Value` parameter to the `double` variable. Option
 * `Span` - **double** | Sweep value for visible range.
 * `MinimumSpan` - **double** | User setting limit (when zooming).
 * `MaximumSpan` - **double** | User setting limit (when zooming).
-```
+```xaml
 <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
                Unit="V" Span="0.1" MinimumSpan="0.01" MaximumSpan="100"/>
 ```
 Don't forget to add the library to the list:
-```
+```xaml
 <Window x:Class="Example.MainWindow"
         ...
         xmlns:fs="clr-namespace:FineSliderNet;assembly=FineSliderNet"
