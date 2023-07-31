@@ -11,7 +11,9 @@
 
 ## About Fine Slider
 
-This is a simple user control inspired by the control knob on analog devices. Can be controlled by mouse or touch screen. Allows you to natively and accurately set the value.
+*Tool for fast and precise setting of numerical values*
+
+This is a simple user control inspired by the control knob on analog devices and standard windows style. Can be controlled by mouse or touch screen. Allows you to natively and accurately set the value.
 
 ![Screenshot](Images/example.gif)
 
