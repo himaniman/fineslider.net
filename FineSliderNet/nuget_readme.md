@@ -1,21 +1,8 @@
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-<div align="center">
-    <img src="Images/icon.ico" alt="Logo" width="80" height="80"/>
-</div>
-
 ## About Fine Slider
 
 *Tool for fast and precise setting of numerical values*
 
 This is a simple user control inspired by the control knob on analog devices and standard windows style. Can be controlled by mouse or touch screen. Allows you to natively and accurately set the value.
-
-![Screenshot](Images/example.gif)
 
 Some features:
 * Open source
