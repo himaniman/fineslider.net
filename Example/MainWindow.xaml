@@ -17,6 +17,11 @@
                        Height="40" Margin="4"/>
         <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
                        Unit="Hz" Span="0.8" MinimumSpan="0.01" MaximumSpan="100"
-                       Height="40" Margin="4"/>
+                       Height="40" Margin="4"
+                       Width="300"/>
+        <Slider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
+                TickFrequency="5" TickPlacement="BottomRight" IsSnapToTickEnabled="True" 
+                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="1"
+                Height="40" Margin="4"/>
     </StackPanel>
 </Window>
