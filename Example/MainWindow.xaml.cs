@@ -17,6 +17,7 @@ namespace Example
             }
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
         public MainWindow()
         {

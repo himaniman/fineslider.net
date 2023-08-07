@@ -185,10 +185,21 @@ namespace FineSliderNet
         {
             if (!AreAnyTouchesCaptured && IsActive && e.LeftButton == MouseButtonState.Pressed)
             {
-                double deltapx = initMousePoint.X - e.GetPosition(this as IInputElement).X;
-                OffsetValue(deltapx);
-                RedrawLimb();
-                e.Handled = true;
+                if (Keyboard.IsKeyDown(Key.Escape))
+                {
+                    IsActive = false;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IsActive)));
+                    Mouse.Capture(null);
+                    SetNewVal(initValue);
+                    e.Handled = true;
+                }
+                else
+                {
+                    double deltapx = initMousePoint.X - e.GetPosition(this as IInputElement).X;
+                    OffsetValue(deltapx);
+                    RedrawLimb();
+                    e.Handled = true;
+                }
             }
             base.OnPreviewMouseMove(e);
         }

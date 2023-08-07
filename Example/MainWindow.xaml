@@ -6,13 +6,17 @@
         xmlns:fs="clr-namespace:FineSliderNet;assembly=FineSliderNet"
         xmlns:local="clr-namespace:Example"
         mc:Ignorable="d"
-        Title="Example" Height="200" Width="600">
+        Title="Example" Width="600">
     <StackPanel Orientation="Vertical">
+        <TextBlock Text="Use mouse LMB, wheel and Ctrl button and Escape to undo" Margin="4" HorizontalAlignment="Center"/>
         <TextBlock Text="Value Double" Margin="4" HorizontalAlignment="Center"/>
         <TextBox Text="{Binding ValueDouble, UpdateSourceTrigger=PropertyChanged}" Margin="4"/>
         <ProgressBar Value="{Binding ValueDouble}" Minimum="-60" Maximum="60" Height="18" Margin="4"/>
-        <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
+        <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60" SmoothSpan="False"
                        Unit="V" Span="0.1" MinimumSpan="0.01" MaximumSpan="100" 
+                       Height="40" Margin="4"/>
+        <fs:FineSlider Value="{Binding ValueDouble}" Minimum="-60" Maximum="60"
+                       Unit="Hz" Span="0.8" MinimumSpan="0.01" MaximumSpan="100"
                        Height="40" Margin="4"/>
     </StackPanel>
 </Window>
